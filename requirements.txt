@@ -1,0 +1,6 @@
+opencv-contrib-python==4.0.0.21
+opencv-python==4.0.0.21
+numpy==1.16.0
+Flask==1.0.2
+mxnet-cu90==1.6.0
+scikit-learn==0.20.2
