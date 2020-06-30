@@ -5,4 +5,4 @@ Flask==1.0.2
 mxnet==1.6.0
 mxnet-mkl
 scikit-learn==0.20.2
-scikit-image==0.17.2
+scikit-image
