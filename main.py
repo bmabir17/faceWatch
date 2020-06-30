@@ -1,8 +1,8 @@
 import numpy as np, cv2
 from flask import Flask, request, Response, jsonify
-# from face_recognizer_512d.embedder import FaceRecognizer512D_Embedder
-# model_path = "face_recognizer_512d/recognizer_models/model"
-# face_encoder_512d = FaceRecognizer512D_Embedder(model_path=model_path, epoch_num='0000', image_size=(112, 112))
+from face_recognizer_512d.embedder import FaceRecognizer512D_Embedder
+model_path = "face_recognizer_512d/recognizer_models/model"
+face_encoder_512d = FaceRecognizer512D_Embedder(model_path=model_path, epoch_num='0000', image_size=(112, 112))
 
 
 def return_encoding(request):
@@ -19,8 +19,8 @@ def return_encoding(request):
     # cv2.imshow('test', img)
     # cv2.waitKey(1000)
     # cv2.destroyAllWindows()
-    # device_face_encoding = face_encoder_512d.embed_image(img)
-    device_face_encoding = None
+    device_face_encoding = face_encoder_512d.embed_image(img)
+    # device_face_encoding = None
     # print(device_face_encoding)
     if device_face_encoding is not None:
     	return jsonify({"Encoding_512D": device_face_encoding.tolist()}), 200
